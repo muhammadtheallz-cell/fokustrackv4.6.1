@@ -1,0 +1,17 @@
+{
+  "name": "fokustrack-push-server",
+  "private": true,
+  "version": "4.6.1",
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "start": "node --env-file=.env index.mjs",
+    "generate-vapid": "node scripts/generate-vapid-keys.mjs",
+    "audit": "node --check index.mjs && node --check security.mjs && node --check push-guards.mjs && node --check scripts/generate-vapid-keys.mjs"
+  },
+  "dependencies": {
+    "web-push": "^3.6.7"
+  }
+}
